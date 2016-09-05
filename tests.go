@@ -1,7 +1,9 @@
 package main
 
 import (
-	"./igomqtt"
+	"./asymptotic"
+	"./mergesort"
+	"fmt"
 )
 
 /**
@@ -23,15 +25,29 @@ func main() {
 	  KeyFile:    relative or absolute location of the key file.
 
 	**/
-	igoMessage := igomqtt.GetIgMessage("ssl://iv-1msdev.ytv.io:8883", "jehollar", "test", "./igomqtt/ca.crt", "./igomqtt/ca.key")
+	asymptotic.Loops(5)
 
-	/**
-	  Publish a message to a specific topic
+	asymptotic.NestedLoop(5)
 
-	  Message Payload:  The message you are publishing
+	asymptotic.ConsecutiveStatements(5)
 
-	  igoMessage: is the structure received from the GetIgMessage function
+	asymptotic.IfThenElseStatements(5)
+
+	asymptotic.LogarithmicComplexity(5)
+
+	asymptotic.LogarithmicComplexityWorst(5)
+
+	asymptotic.LogarithmicComplexityLogn1(20)
+
+	asymptotic.LogarithmicComplexityLogn2(20)
+
+	asymptotic.RecursiveFunction1(20)
+
+	/** Merge Sort Example
 	**/
-	igomqtt.PublishMessage("TEST MESSAGE Payload", &igoMessage)
+
+	slice := mergesort.GenerateSlice(50)
+	fmt.Printf("\n --- unsorted --- \n\n", slice)
+	fmt.Printf("\n --- sorted ---\n\n", mergesort.MergeSort(slice), "\n")
 
 }
